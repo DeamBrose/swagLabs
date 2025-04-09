@@ -1,5 +1,6 @@
 package definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePages;
@@ -22,6 +23,14 @@ public class HomePageDefinition {
     public void agregueProductosAlCarritoDeCompra() {
         homePages.clickProductSauceLabsBackpack();
         homePages.clickProductSauceLabsBikeLight();
+        homePages.btnCartClick();
+    }
+
+    @And("agregue tres productos al carrito de compra")
+    public void agreguetresProductosAlCarritoDeCompra() {
+        homePages.clickProductSauceLabsBackpack();
+        homePages.clickProductSauceLabsBikeLight();
+        homePages.clickProductSauceLabsBoltTShirt();
         homePages.btnCartClick();
     }
 }

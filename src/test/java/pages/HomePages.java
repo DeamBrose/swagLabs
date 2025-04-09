@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import support.Util;
 
 import java.util.List;
@@ -40,6 +41,10 @@ public class HomePages extends Util {
 
     public void clickProductSauceLabsBikeLight(){
         btnSauceLabsBikeLight.click();
+    }
+
+    public void clickProductSauceLabsBoltTShirt(){
+        btnProductSauceLabsBoltTShirt.click();
     }
 
     public void btnCartClick(){

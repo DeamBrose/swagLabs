@@ -29,6 +29,19 @@ Feature:
     When agregue productos al carrito de compra
     Then verifico que en la pagina de carrito de compra se visualice los productos agregados
 
+  @regresion
+  Scenario: Validacion de confirmación de compra del carrito- Ok
+    Given estoy en la pagina de login de Sauce Demo
+    And inicio sesion como usuario estandar
+    And agregue tres productos al carrito de compra
+    When continuo con el proceso de checkout
+    And agrego mi información personal en la pagina de Checkout: Your Information
+    And continuo con el proceso de la compra con el boton continuar
+    And verifico que me muestre los productos y finalizo con mi pedido dandole click al boton finish en la pagina Checkout: Overview
+    Then valido que me muestre un mensaje "Thank you for your order!"
+
+
+
 
 
 
