@@ -16,7 +16,7 @@ public class HomePageDefinition {
 
     @Then("deberia ver la pagina de inventario de productos")
     public void deberiaVerLaPaginaDeInventarioDeProductos() {
-        assertTrue("Se esperaba más de un producto", homePages.validacionListaDeProductos());
+        homePages.validacionDeProductosEnElInventario();
     }
 
     @When("agregue productos al carrito de compra")

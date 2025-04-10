@@ -8,6 +8,8 @@ import support.Util;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 public class HomePages extends Util {
     @FindBy( css = "#inventory_container .inventory_item")
     protected List<WebElement> listProduct;
@@ -31,8 +33,12 @@ public class HomePages extends Util {
         PageFactory.initElements( driver, this );
     }
 
-    public boolean validacionListaDeProductos(){
+    private boolean validacionListaDeProductos(){
         return listProduct.size() > 1;
+    }
+
+    public void validacionDeProductosEnElInventario(){
+        assertTrue("Se esperaba más de un producto", validacionListaDeProductos());
     }
 
     public void clickProductSauceLabsBackpack(){

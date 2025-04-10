@@ -18,7 +18,7 @@ public class CarritoPageDefinition {
 
     @Then("verifico que en la pagina de carrito de compra se visualice los productos agregados")
     public void verificoQueEnLaPaginaDeCarritoDeCompraSeVisualiceLosProductosAgregados() {
-        assertTrue("Se esperaba más de un producto", carritoPage.validarListaDeCarrito());
+        carritoPage.validacionDeProductosAgregadosEnElCarrito();
     }
 
     @When("continuo con el proceso de checkout")

@@ -8,6 +8,8 @@ import support.Util;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 public class CarritoPage extends Util {
 
     @FindBy(css = ".cart_list [data-test='inventory-item']")
@@ -20,10 +22,13 @@ public class CarritoPage extends Util {
         PageFactory.initElements(driver, this);
     }
 
-    public boolean validarListaDeCarrito() {
+     private  boolean validarListaDeCarrito() {
         return cartItems.size() > 1;
     }
 
+    public void validacionDeProductosAgregadosEnElCarrito(){
+        assertTrue("Se esperaba más de un producto", validarListaDeCarrito());
+    }
     public void clickBtnCheckout() {
         btnCheckout.click();
     }

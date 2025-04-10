@@ -7,6 +7,8 @@ import support.Util;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class LoginPage extends Util {
     @FindBy( id = "user-name")
     protected WebElement txtUsername;
@@ -36,12 +38,16 @@ public class LoginPage extends Util {
         btnLogin.click();
     }
 
-    public String getErrorMessage(){
+    private String getErrorMessage(){
         String message = txtMessageError.getText();
         if( !message.isEmpty() ){
             return message;
         } else {
             return "mensaje no encontrado";
         }
+    }
+
+    public void validacionDeMensajeDeErrorEsperado(String message){
+        assertEquals(message, getErrorMessage());
     }
 }

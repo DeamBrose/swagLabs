@@ -34,7 +34,7 @@ public class LoginDefinition {
 
     @Then("deberia responderme con el mensaje de error {string}")
     public void deberiaRespondermeConElMensajeDeError(String messageError) {
-        assertEquals(messageError, loginPage.getErrorMessage());
+        loginPage.validacionDeMensajeDeErrorEsperado(messageError);
     }
 
     @When("inicio sesion como usuario bloqueado")
